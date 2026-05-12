@@ -527,7 +527,7 @@ function Projects() {
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="https://github.com/vikasmishra143/portfolio" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan/50 hover:bg-cyan/10">
+              <a href="https://github.com/vikasmishra143/genai-cli" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan/50 hover:bg-cyan/10">
                 <Github size={18} /> GitHub
               </a>
               <a href="#home" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-ink transition hover:-translate-y-1 hover:shadow-glow">
