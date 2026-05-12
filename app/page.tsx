@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { FormEvent, useState } from "react";
 import {
   ArrowDownToLine,
   ArrowRight,
@@ -526,10 +527,10 @@ function Projects() {
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan/50 hover:bg-cyan/10">
+              <a href="https://github.com/vikasmishra143/portfolio" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan/50 hover:bg-cyan/10">
                 <Github size={18} /> GitHub
               </a>
-              <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-ink transition hover:-translate-y-1 hover:shadow-glow">
+              <a href="#home" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-ink transition hover:-translate-y-1 hover:shadow-glow">
                 <ExternalLink size={18} /> Live Demo
               </a>
             </div>
@@ -596,13 +597,34 @@ function Contact() {
     value: string;
     href: string;
     icon: typeof Mail;
+    external?: boolean;
   }> = [
     { label: "Email", value: "vikasm3004@gmail.com", href: "mailto:vikasm3004@gmail.com", icon: Mail },
     { label: "Phone", value: "+91 91401 12914", href: "tel:+919140112914", icon: PhoneCall },
-    { label: "LinkedIn", value: "linkedin.com/in/vikas-mishra", href: "#", icon: Linkedin },
-    { label: "GitHub", value: "github.com/vikas-mishra", href: "#", icon: Github },
+    { label: "LinkedIn", value: "linkedin.com/in/vikas-mishra", href: "https://www.linkedin.com/in/vikas-mishra", icon: Linkedin, external: true },
+    { label: "GitHub", value: "github.com/vikasmishra143", href: "https://github.com/vikasmishra143", icon: Github, external: true },
     { label: "Location", value: "Pune, India", href: "#", icon: MapPin }
   ];
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const subject = encodeURIComponent(`Portfolio inquiry from ${formState.name || "a visitor"}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${formState.name}`,
+        `Email: ${formState.email}`,
+        "",
+        formState.message
+      ].join("\n")
+    );
+
+    window.location.href = `mailto:vikasm3004@gmail.com?subject=${subject}&body=${body}`;
+  }
 
   return (
     <section id="contact" className="section-shell py-24">
@@ -613,10 +635,12 @@ function Contact() {
       />
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="space-y-4">
-          {contactLinks.map(({ label, value, href, icon: Icon }) => (
+          {contactLinks.map(({ label, value, href, icon: Icon, external }) => (
             <a
               key={label}
               href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noreferrer" : undefined}
               className="glass flex items-center gap-4 rounded-2xl p-5 transition hover:-translate-y-1 hover:border-cyan/30"
             >
               <span className="rounded-2xl bg-cyan/10 p-3 text-cyan">
@@ -629,22 +653,41 @@ function Contact() {
             </a>
           ))}
         </div>
-        <form className="glass rounded-3xl p-6 sm:p-8">
+        <form onSubmit={handleSubmit} className="glass rounded-3xl p-6 sm:p-8">
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="space-y-2">
               <span className="text-sm text-slate-300">Name</span>
-              <input className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan/50" placeholder="Your name" />
+              <input
+                required
+                value={formState.name}
+                onChange={(event) => setFormState((current) => ({ ...current, name: event.target.value }))}
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan/50"
+                placeholder="Your name"
+              />
             </label>
             <label className="space-y-2">
               <span className="text-sm text-slate-300">Email</span>
-              <input type="email" className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan/50" placeholder="you@example.com" />
+              <input
+                required
+                type="email"
+                value={formState.email}
+                onChange={(event) => setFormState((current) => ({ ...current, email: event.target.value }))}
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan/50"
+                placeholder="you@example.com"
+              />
             </label>
           </div>
           <label className="mt-4 block space-y-2">
             <span className="text-sm text-slate-300">Message</span>
-            <textarea className="min-h-36 w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan/50" placeholder="Tell me about your AI or Android project" />
+            <textarea
+              required
+              value={formState.message}
+              onChange={(event) => setFormState((current) => ({ ...current, message: event.target.value }))}
+              className="min-h-36 w-full resize-none rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan/50"
+              placeholder="Tell me about your AI or Android project"
+            />
           </label>
-          <button type="button" className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan px-6 py-3 font-semibold text-ink transition hover:-translate-y-1 hover:shadow-glow sm:w-auto">
+          <button type="submit" className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan px-6 py-3 font-semibold text-ink transition hover:-translate-y-1 hover:shadow-glow sm:w-auto">
             Send Message <Send size={18} />
           </button>
         </form>
