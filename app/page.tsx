@@ -250,7 +250,7 @@ function Hero() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan/20 bg-cyan/10 px-4 py-2 text-sm text-cyan">
             <Sparkles size={16} />
-            Building intelligence for mobile and edge systems
+            Open to full-time roles and freelance AI projects
           </div>
           <h1 className="text-gradient text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">
             Vikas Mishra
@@ -631,7 +631,7 @@ function Contact() {
       <SectionHeader
         eyebrow="Contact"
         title="Let's build the next intelligent product"
-        copy="Open to conversations around AI engineering, Android systems, edge AI deployment, and GenAI product development."
+        copy="Open to full-time opportunities, role transitions, and selective freelance collaborations across AI engineering, Android systems, edge AI deployment, and GenAI product development."
       />
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <div className="space-y-4">
@@ -701,7 +701,7 @@ function Footer() {
     <footer className="border-t border-white/10 py-8">
       <div className="section-shell flex flex-col justify-between gap-3 text-sm text-slate-400 sm:flex-row">
         <p>(c) 2026 Vikas Mishra. Built for AI, Android, and edge intelligence.</p>
-        <p className="font-mono text-cyan">Available for high-impact engineering work</p>
+        <p className="font-mono text-cyan">Open to full-time opportunities and freelance collaborations</p>
       </div>
     </footer>
   );
