@@ -1,0 +1,31 @@
+Vikas Mishra
+Associate Software Engineer | AI Engineer | Android Developer
+
+Building AI-powered Android applications, edge AI systems, and production-grade GenAI pipelines.
+
+Contact
+Email: vikasm3004@gmail.com
+Phone: +91 91401 12914
+Location: Pune, India
+
+Experience
+Tech Mahindra - Makers Lab (R&D)
+Associate Software Engineer | March 2024 - Present
+
+Focus Areas
+- LLMs, GenAI, RAG, agentic frameworks, model evaluation, and fine-tuning workflows
+- Android development with MVVM, Jetpack Compose, StateFlow, LiveData, Room, and WorkManager
+- On-device AI inference and Qualcomm NPU optimization with AIMET INT8 quantization
+- Offline edge AI applications and scalable production AI systems
+- Collaboration with Qualcomm and NVIDIA
+
+Featured Work
+- Indus - Educational LLM, showcased at India AI Summit 2026
+- Fraud Call Detection - Edge AI Android inference pipeline, showcased at IMC
+- AutoVaani - Offline automotive AI assistant, showcased at Qualcomm Auto Day
+- Darpan Application - Android performance and architecture improvements, showcased at India AI Summit 2026
+
+Education
+B.Tech in Information Technology
+AKTU - Buddha Institute of Technology
+CGPA: 7.8
