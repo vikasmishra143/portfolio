@@ -39,7 +39,7 @@ const skills = [
   {
     title: "AI / ML",
     icon: BrainCircuit,
-    items: ["LLMs", "GenAI", "RAG", "Agentic Frameworks", "TensorFlow", "PyTorch", "AIMET", "INT8 Quantization"]
+    items: ["LLMs", "GenAI", "RAG", "Agentic Frameworks", "LangGraph", "LoRA / QLoRA", "FAISS", "vLLM", "llama.cpp / GGUF", "TensorFlow", "PyTorch", "AIMET", "INT8 Quantization"]
   },
   {
     title: "Edge AI",
@@ -59,6 +59,16 @@ const skills = [
 ];
 
 const experienceProjects = [
+{
+name: "Indus Auto - On-device In-car LLM Assistant",
+event: "On-device LLM for car infotainment",
+icon: Cpu,
+points: [
+"Built an on-device LLM assistant that runs inside a car's infotainment system, without depending on the cloud.",
+"Supports Indic languages and natural voice interaction, similar to Siri.",
+"Controls in-car functions by voice, such as AC temperature and other vehicle settings."
+]
+},
   {
     name: "Indus - Educational LLM",
     event: "Showcased at India AI Summit 2026",
@@ -256,7 +266,7 @@ function Hero() {
             Vikas Mishra
           </h1>
           <p className="mt-5 font-mono text-base text-slate-200 sm:text-xl">
-            Associate Software Engineer | AI Engineer | Android Developer
+            Generative AI & On-Device LLM Engineer | Android Developer
           </p>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Building AI-powered Android applications, edge AI systems, and production-grade GenAI pipelines.
@@ -268,7 +278,7 @@ function Hero() {
             <a href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan/50 hover:bg-white/10">
               Contact Me <Mail size={18} />
             </a>
-            <a href="/Vikas-Mishra-Resume.pdf" download className="inline-flex items-center justify-center gap-2 rounded-full border border-violet/40 px-6 py-3 font-semibold text-violet-100 transition hover:-translate-y-1 hover:bg-violet/15">
+            <a href="/Vikas_Mishra_GenAI_Engineer.pdf" download className="inline-flex items-center justify-center gap-2 rounded-full border border-violet/40 px-6 py-3 font-semibold text-violet-100 transition hover:-translate-y-1 hover:bg-violet/15">
               Download Resume <ArrowDownToLine size={18} />
             </a>
           </div>
@@ -347,7 +357,7 @@ function About() {
       >
         <div className="glass rounded-3xl p-7 sm:p-9">
           <p className="text-lg leading-8 text-slate-200">
-            Vikas Mishra is an Associate Software Engineer at Tech Mahindra - Makers Lab (R&amp;D), working across Android development, LLMs, GenAI, Retrieval-Augmented Generation, agentic frameworks, on-device AI inference, and Qualcomm NPU optimization. His work spans large-scale data processing, model evaluation, production Android engineering, and optimized edge deployment.
+            Vikas Mishra is a Generative AI and On-Device LLM Engineer at Tech Mahindra - Makers Lab (R&amp;D), working across Android development, LLMs, GenAI, Retrieval-Augmented Generation, agentic frameworks, on-device AI inference, and Qualcomm NPU optimization. His work spans large-scale data processing, model evaluation, production Android engineering, and optimized edge deployment.
           </p>
           <p className="mt-5 text-base leading-8 text-slate-300">
             He has delivered solutions in collaboration with Qualcomm and NVIDIA, with work showcased at India AI Summit, IMC, and Qualcomm Auto Day. His engineering focus is clear: scalable AI systems, offline-first experiences, reliable mobile architecture, and low-latency edge AI applications.
@@ -434,9 +444,10 @@ function Experience() {
             <p className="flex items-center gap-2 text-cyan">
               <BriefcaseBusiness size={18} /> Tech Mahindra - Makers Lab (R&amp;D)
             </p>
-            <h3 className="mt-2 text-2xl font-semibold text-white">Associate Software Engineer</h3>
+            <h3 className="mt-2 text-2xl font-semibold text-white">Associate Data Engineer</h3>
+<p className="mt-1 text-sm text-slate-400">Previously Associate Software Engineer, March 2024 - August 2026</p>
           </div>
-          <p className="font-mono text-sm text-slate-400">March 2024 - Present</p>
+          <p className="font-mono text-sm text-slate-400">September 2026 - Present</p>
         </div>
         <div className="relative space-y-8 before:absolute before:left-5 before:top-2 before:h-[calc(100%-1rem)] before:w-px before:bg-gradient-to-b before:from-cyan before:via-violet before:to-transparent">
           {experienceProjects.map((project, index) => {
@@ -530,8 +541,8 @@ function Projects() {
               <a href="https://github.com/vikasmishra143/genai-cli" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-5 py-3 font-semibold text-white transition hover:-translate-y-1 hover:border-cyan/50 hover:bg-cyan/10">
                 <Github size={18} /> GitHub
               </a>
-              <a href="#home" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-ink transition hover:-translate-y-1 hover:shadow-glow">
-                <ExternalLink size={18} /> Live Demo
+              <a href="https://github.com/vikasmishra143/genai-cli#readme" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-ink transition hover:-translate-y-1 hover:shadow-glow">
+                <ExternalLink size={18} /> View README
               </a>
             </div>
           </div>
@@ -601,7 +612,7 @@ function Contact() {
   }> = [
     { label: "Email", value: "vikasm3004@gmail.com", href: "mailto:vikasm3004@gmail.com", icon: Mail },
     { label: "Phone", value: "+91 91401 12914", href: "tel:+919140112914", icon: PhoneCall },
-    { label: "LinkedIn", value: "linkedin.com/in/vikas-mishra", href: "https://www.linkedin.com/in/vikas-mishra", icon: Linkedin, external: true },
+    { label: "LinkedIn", value: "linkedin.com/in/vikas-mishra-2a589a215", href: "https://www.linkedin.com/in/vikas-mishra-2a589a215", icon: Linkedin, external: true },
     { label: "GitHub", value: "github.com/vikasmishra143", href: "https://github.com/vikasmishra143", icon: Github, external: true },
     { label: "Location", value: "Pune, India", href: "#", icon: MapPin }
   ];
